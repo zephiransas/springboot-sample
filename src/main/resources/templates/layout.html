@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
       xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
 <head lang="en">
     <meta charset="UTF-8"/>
     <title>Layout</title>
     <link rel="stylesheet" href="#" th:href="@{/webjars/bootstrap/3.3.4/dist/css/bootstrap.css}"/>
+    <link rel="stylesheet" href="#" th:href="@{/css/style.css}"/>
 </head>
 <body>
 <div class="container">
+    <!--
     <h1>顧客管理システム</h1>
+    -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#" th:href="@{/customers}">顧客管理システム</a>
+            </div>
+            <p class="navbar-text navbar-right">
+                <div th:remove="tag" sec:authentication="principal.user.username">USER NAME</div>としてログイン中
+                <a href="#" th:href="@{/logout}" class="navbar-link">ログアウト</a>
+            </p>
+        </div>
+    </nav>
+
     <div layout:fragment="content">
         Fake content
     </div>
