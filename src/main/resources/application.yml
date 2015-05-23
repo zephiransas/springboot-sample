@@ -1,4 +1,11 @@
 spring:
+  profiles:
+    ##
+    active: dev
+---
+spring:
+  ##
+  profiles: dev
   datasource:
     url: jdbc:log4jdbc:postgresql://localhost:5432/sampledb
     driverClassName: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
@@ -6,4 +13,14 @@ spring:
     hibernate.ddl-auto: validate
   thymeleaf:
     cache: false
+  security.basic.enabled: false
+---
+spring:
+  ##
+  profiles: heroku
+  datasource:
+    driverClassName: org.postgresql.Driver
+  jpa:
+    database: POSTGRESQL
+    hibernate.ddl-auto: validate
   security.basic.enabled: false
