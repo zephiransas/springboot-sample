@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    url: jdbc:log4jdbc:postgresql://localhost:5432/sampledb
+    driverClassName: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+  jpa:
+    hibernate.ddl-auto: validate
+  thymeleaf:
+    cache: false
+  security.basic.enabled: false

@@ -1,0 +1,32 @@
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorator="layout">
+<head>
+</head>
+
+<body>
+
+<div layout:fragment="content">
+    <form action="#"
+          th:action="${customerForm.id == null} ? @{/customers/create} : @{/customers/{id}/update(id=${customerForm.id})}"
+          th:method="${customerForm.id == null} ? 'post' : 'put'" th:object="${customerForm}">
+
+        <div class="form-group">
+            <label>First Name</label>
+            <input type="text" class="form-control" th:field="*{firstName}"/>
+        </div>
+        <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" class="form-control" th:field="*{lastName}"/>
+        </div>
+
+        <input type="submit" value="保存する" class="btn btn-default"/>
+
+    </form>
+
+</div>
+
+
+
+</body>
+</html>

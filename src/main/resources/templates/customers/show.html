@@ -1,0 +1,29 @@
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorator="layout">
+<head>
+    <title>Customer Detail</title>
+</head>
+<body>
+
+<div layout:fragment="content">
+    <table class="table table-bordered">
+        <tr>
+            <th>ID</th>
+            <td th:text="${customer.id}"></td>
+        </tr>
+        <tr>
+            <th>First Name</th>
+            <td th:text="${customer.firstName}"></td>
+        </tr>
+        <tr>
+            <th>Last Name</th>
+            <td th:text="${customer.lastName}"></td>
+        </tr>
+    </table>
+    <a href="#" th:href="@{/customers/{id}/edit(id=${customer.id})}" class="btn btn-default">編集</a>
+    <a href="#" th:href="@{/customers/{id}/edit(id=${customer.id})}" class="btn btn-danger">削除</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <title>Layout</title>
+    <link rel="stylesheet" href="#" th:href="@{/webjars/bootstrap/3.3.4/dist/css/bootstrap.css}"/>
+</head>
+<body>
+<div class="container">
+    <h1>顧客管理システム</h1>
+    <div layout:fragment="content">
+        Fake content
+    </div>
+</div>
+
+<script src="#" th:src="@{/webjars/jquery/2.1.3/dist/jquery.js}"></script>
+<script src="#" th:src="@{/webjars/bootstrap/3.3.4/dist/js/bootstrap.js}"></script>
+
+</body>
+</html>
