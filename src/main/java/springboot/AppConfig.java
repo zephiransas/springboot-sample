@@ -31,7 +31,7 @@ public class AppConfig {
 			password = properties.getPassword();
 		} else {
 			URI dbUri = new URI(databseUrl);
-			url = "jdbc:postgresql://" + dbUri.getHost() + ":" + dbUri.getPort() + dbUri.getPath();
+			url = "jdbc:log4jdbc:postgresql://" + dbUri.getHost() + ":" + dbUri.getPort() + dbUri.getPath();
 			username = dbUri.getUserInfo().split(":")[0];
 			password = dbUri.getUserInfo().split(":")[1];
 		}
